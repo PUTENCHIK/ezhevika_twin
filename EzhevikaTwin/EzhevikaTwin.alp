@@ -201,6 +201,96 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1747270657844</Id>
+					<Name><![CDATA[incomeDay]]></Name>
+					<X>-350</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1747270743023</Id>
+					<Name><![CDATA[ordersCostDay]]></Name>
+					<X>-350</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1747270912093</Id>
+					<Name><![CDATA[incomeLostDay]]></Name>
+					<X>-350</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1747272237827</Id>
+					<Name><![CDATA[income]]></Name>
+					<X>-350</X><Y>320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1747272237833</Id>
+					<Name><![CDATA[ordersCost]]></Name>
+					<X>-350</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1747272237835</Id>
+					<Name><![CDATA[incomeLost]]></Name>
+					<X>-350</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1745922924314</Id>
 					<Name><![CDATA[maxWaitingForSeat]]></Name>
@@ -314,6 +404,30 @@
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1747234629272</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1747271454276</Id>
+					<Name><![CDATA[orderSelfCostRate]]></Name>
+					<X>-150</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.5]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1747271454274</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -1753,6 +1867,51 @@
 					</Points>
 				</Connector>
 			</Connectors>
+			<Events>
+				<Event>
+					<Id>1747269950738</Id>
+					<Name><![CDATA[resetDayVariables]]></Name>
+					<X>-490</X><Y>20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_MINUTE]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1747364400000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[1082]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[customersTotal = 0;
+customersPayed = 0;
+customersNoSeat = 0;
+customersNoWaiter = 0;
+customersNoOrder = 0;
+
+income += incomeDay;
+ordersCost += ordersCostDay;
+incomeLost += incomeLostDay;
+
+incomeDay = 0;
+ordersCostDay = 0;
+incomeLostDay = 0;]]></Action>
+				</Event>
+			</Events>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -1834,38 +1993,143 @@ orderSpawns.inject();]]></Body>
 					<Intervals>
 						<Interval>
 							<Start>32400000</Start>
-							<End>75600000</End>
-							<Value>0.667</Value>
+							<End>43200000</End>
+							<Value>0.333</Value>
 						</Interval>
 						<Interval>
 							<Start>118800000</Start>
-							<End>162000000</End>
-							<Value>0.667</Value>
+							<End>129600000</End>
+							<Value>0.333</Value>
 						</Interval>
 						<Interval>
 							<Start>205200000</Start>
-							<End>248400000</End>
-							<Value>0.667</Value>
+							<End>216000000</End>
+							<Value>0.333</Value>
 						</Interval>
 						<Interval>
 							<Start>291600000</Start>
-							<End>334800000</End>
-							<Value>0.667</Value>
+							<End>302400000</End>
+							<Value>0.333</Value>
 						</Interval>
 						<Interval>
 							<Start>378000000</Start>
+							<End>388800000</End>
+							<Value>0.333</Value>
+						</Interval>
+						<Interval>
+							<Start>43260000</Start>
+							<End>50400000</End>
+							<Value>0.75</Value>
+						</Interval>
+						<Interval>
+							<Start>129660000</Start>
+							<End>136800000</End>
+							<Value>0.75</Value>
+						</Interval>
+						<Interval>
+							<Start>216060000</Start>
+							<End>223200000</End>
+							<Value>0.75</Value>
+						</Interval>
+						<Interval>
+							<Start>302460000</Start>
+							<End>309600000</End>
+							<Value>0.75</Value>
+						</Interval>
+						<Interval>
+							<Start>388860000</Start>
+							<End>396000000</End>
+							<Value>0.75</Value>
+						</Interval>
+						<Interval>
+							<Start>50460000</Start>
+							<End>61200000</End>
+							<Value>0.333</Value>
+						</Interval>
+						<Interval>
+							<Start>136860000</Start>
+							<End>147600000</End>
+							<Value>0.333</Value>
+						</Interval>
+						<Interval>
+							<Start>223260000</Start>
+							<End>234000000</End>
+							<Value>0.333</Value>
+						</Interval>
+						<Interval>
+							<Start>309660000</Start>
+							<End>320400000</End>
+							<Value>0.333</Value>
+						</Interval>
+						<Interval>
+							<Start>396060000</Start>
+							<End>406800000</End>
+							<Value>0.333</Value>
+						</Interval>
+						<Interval>
+							<Start>61260000</Start>
+							<End>75600000</End>
+							<Value>0.6</Value>
+						</Interval>
+						<Interval>
+							<Start>147660000</Start>
+							<End>162000000</End>
+							<Value>0.6</Value>
+						</Interval>
+						<Interval>
+							<Start>234060000</Start>
+							<End>248400000</End>
+							<Value>0.6</Value>
+						</Interval>
+						<Interval>
+							<Start>320460000</Start>
+							<End>334800000</End>
+							<Value>0.6</Value>
+						</Interval>
+						<Interval>
+							<Start>406860000</Start>
 							<End>421200000</End>
-							<Value>0.667</Value>
+							<Value>0.6</Value>
 						</Interval>
 						<Interval>
 							<Start>468000000</Start>
-							<End>507600000</End>
-							<Value>0.5</Value>
+							<End>475200000</End>
+							<Value>0.2</Value>
 						</Interval>
 						<Interval>
 							<Start>554400000</Start>
-							<End>594000000</End>
+							<End>561600000</End>
+							<Value>0.2</Value>
+						</Interval>
+						<Interval>
+							<Start>475260000</Start>
+							<End>482400000</End>
 							<Value>0.5</Value>
+						</Interval>
+						<Interval>
+							<Start>561660000</Start>
+							<End>568800000</End>
+							<Value>0.5</Value>
+						</Interval>
+						<Interval>
+							<Start>482460000</Start>
+							<End>493200000</End>
+							<Value>0.24</Value>
+						</Interval>
+						<Interval>
+							<Start>568860000</Start>
+							<End>579600000</End>
+							<Value>0.24</Value>
+						</Interval>
+						<Interval>
+							<Start>493260000</Start>
+							<End>507600000</End>
+							<Value>0.45</Value>
+						</Interval>
+						<Interval>
+							<Start>579660000</Start>
+							<End>594000000</End>
+							<Value>0.45</Value>
 						</Interval>
 					</Intervals>
 					<Exceptions>
@@ -3913,7 +4177,11 @@ if (seat != null) {
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[customersPayed++;]]></Code>
+								<Code><![CDATA[customersPayed++;
+if (agent.order != null) {
+	traceln("[PAYMENT] Customer " + agent + " pays " + agent.order.price);
+	incomeDay += agent.order.price;
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4790,7 +5058,7 @@ if (seat != null) {
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[5]]></Code>
+								<Code><![CDATA[waitersCount]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6088,7 +6356,8 @@ if (closestAttractor != null) {
 							<Name><![CDATA[onAtExit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[agent.customer = lastWaiter.customer;
-traceln("New order " + agent + ": customer " + agent.customer);]]></Code>
+agent.setPrice();
+traceln("New order " + agent + " (" + agent.price + "): customer " + agent.customer);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6654,7 +6923,7 @@ traceln("Cooker " + cooker + " took order " + agent);]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[5]]></Code>
+								<Code><![CDATA[triangular(3, 5, 7)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -6689,6 +6958,7 @@ traceln("Cooker " + cooker + " took order " + agent);]]></Code>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[agent.isReady = true;
+ordersCostDay += agent.price * orderSelfCostRate;
 enterCooker.take(agent.cooker);]]></Code>
 							</Value>
 						</Parameter>
@@ -7691,6 +7961,9 @@ if (!agent.order.isReady) {
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[priority]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[5]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[taskMayPreemptOtherTasks]]></Name>
@@ -7850,6 +8123,9 @@ waiter.order = agent;]]></Code>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[type]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.MANUAL]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
@@ -8710,7 +8986,14 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[customersNoOrder++;]]></Code>
+								<Code><![CDATA[customersNoOrder++;
+traceln("[LOST] Customer " + agent + " leaves without order");
+incomeLostDay += 453.18;
+/*
+if (agent.order != null) {
+	incomeLostDay += 453.18;
+}
+*/]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -12269,7 +12552,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				<Text>
 					<Id>1747234763698</Id>
 					<Name><![CDATA[text]]></Name>
-					<X>560</X><Y>40</Y>
+					<X>500</X><Y>20</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12291,7 +12574,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				<Text>
 					<Id>1747235114546</Id>
 					<Name><![CDATA[text1]]></Name>
-					<X>560</X><Y>70</Y>
+					<X>500</X><Y>50</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12313,7 +12596,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				<Text>
 					<Id>1747235117870</Id>
 					<Name><![CDATA[text2]]></Name>
-					<X>560</X><Y>100</Y>
+					<X>500</X><Y>80</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12335,7 +12618,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				<Text>
 					<Id>1747235120105</Id>
 					<Name><![CDATA[text3]]></Name>
-					<X>560</X><Y>130</Y>
+					<X>500</X><Y>110</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12346,7 +12629,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
 					<Text><![CDATA["Всего посетителей: " + ]]></Text>
-					<TextCode><![CDATA["Оставшихся без официанта: " + customersNoWaiter]]></TextCode>
+					<TextCode><![CDATA["Не дождавшихся официанта: " + customersNoWaiter]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>10</Size>
@@ -12357,7 +12640,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				<Text>
 					<Id>1747235124636</Id>
 					<Name><![CDATA[text4]]></Name>
-					<X>560</X><Y>160</Y>
+					<X>500</X><Y>140</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12368,7 +12651,383 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
 					<Text><![CDATA["Всего посетителей: " + ]]></Text>
-					<TextCode><![CDATA["Недождавшихся заказа: " + customersNoOrder]]></TextCode>
+					<TextCode><![CDATA["Не дождавшихся заказа: " + customersNoOrder]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+    			<TimePlot>
+					<Id>1747268503970</Id>
+					<Name><![CDATA[plot]]></Name>
+					<X>1000</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1747296000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>360</Width>
+					<Height>250</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>280</Width>
+						<Height>160</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>HOUR</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[500]]></VerScaleToExpression>
+					<VerScaleType>FIXED</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Всего]]></Title>
+					<Id>1747268505212</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-9404272</Color>
+					<Expression2><![CDATA[customersTotal]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Успешных]]></Title>
+					<Id>1747268757998</Id>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-16711936</Color>
+					<Expression2><![CDATA[customersPayed]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Оставшихся без места]]></Title>
+					<Id>1747268789828</Id>
+					<Expression><![CDATA[my_dataset2]]></Expression>
+					<Color>-256</Color>
+					<Expression2><![CDATA[customersNoSeat]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Не дождавшихся официанта]]></Title>
+					<Id>1747268822298</Id>
+					<Expression><![CDATA[my_dataset3]]></Expression>
+					<Color>-23296</Color>
+					<Expression2><![CDATA[customersNoWaiter]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Не дождавшихся заказа]]></Title>
+					<Id>1747268892289</Id>
+					<Expression><![CDATA[my_dataset4]]></Expression>
+					<Color>-65536</Color>
+					<Expression2><![CDATA[customersNoOrder]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>10000</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[18]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>SHORT_TIME_ONLY</LabelFormat>
+    			</TimePlot>
+    			<TimeStackChart>
+					<Id>1747269165885</Id>
+					<Name><![CDATA[chart]]></Name>
+					<X>1400</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1747296000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>350</Width>
+					<Height>250</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>270</Width>
+						<Height>160</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>DAY</TimeWindowUnits>
+					<TimeWindowExpression><![CDATA[1]]></TimeWindowExpression>
+					<DatasetExpression>
+					<Id>1747269166673</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-4144960</Color>
+					<Expression2><![CDATA[customersTotal]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+							<Title><![CDATA[Всего]]></Title>
+					</DatasetExpression>
+					<DatasetExpression>
+					<Id>1747269187399</Id>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-16711936</Color>
+					<Expression2><![CDATA[customersPayed]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+							<Title><![CDATA[Успешных]]></Title>
+					</DatasetExpression>
+					<DatasetExpression>
+					<Id>1747269197437</Id>
+					<Expression><![CDATA[my_dataset2]]></Expression>
+					<Color>-256</Color>
+					<Expression2><![CDATA[customersNoSeat]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+							<Title><![CDATA[Оставшихся без места]]></Title>
+					</DatasetExpression>
+					<DatasetExpression>
+					<Id>1747269207893</Id>
+					<Expression><![CDATA[my_dataset3]]></Expression>
+					<Color>-10496</Color>
+					<Expression2><![CDATA[customersNoWaiter]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+							<Title><![CDATA[Не дождавшихся официанта]]></Title>
+					</DatasetExpression>
+					<DatasetExpression>
+					<Id>1747269217243</Id>
+					<Expression><![CDATA[my_dataset4]]></Expression>
+					<Color>-65536</Color>
+					<Expression2><![CDATA[customersNoOrder]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+							<Title><![CDATA[Не дождавшихся заказа]]></Title>
+					</DatasetExpression>
+					<SamplesToKeep>10000</SamplesToKeep>
+					<VerScaleToExpression><![CDATA[1000]]></VerScaleToExpression>
+					<VerScaleType>FIXED</VerScaleType>
+					<LabelFormat>SHORT_TIME_ONLY</LabelFormat>
+    			</TimeStackChart>
+				<Text>
+					<Id>1747270986477</Id>
+					<Name><![CDATA[text5]]></Name>
+					<X>500</X><Y>200</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA["Всего посетителей: " + ]]></Text>
+					<TextCode><![CDATA["Дневной доход: " + String.format("%.2f", incomeDay)]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1747271014008</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>500</X><Y>260</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA["Всего посетителей: " + ]]></Text>
+					<TextCode><![CDATA["Потеряно доходов за день: " + String.format("%.2f", incomeLostDay)]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1747271526392</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>500</X><Y>230</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA["Всего посетителей: " + ]]></Text>
+					<TextCode><![CDATA["Себестоимость заказов (дневная): " + String.format("%.2f", ordersCostDay)]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1747271596237</Id>
+					<Name><![CDATA[text8]]></Name>
+					<X>500</X><Y>310</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA["Всего посетителей: " + ]]></Text>
+					<TextCode><![CDATA["Дневная прибыль: " + String.format("%.2f", incomeDay - ordersCostDay)]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1747272343320</Id>
+					<Name><![CDATA[text9]]></Name>
+					<X>750</X><Y>230</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA["Всего посетителей: " + ]]></Text>
+					<TextCode><![CDATA["Себестоимость заказов: " + String.format("%.2f", ordersCost)]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1747272343322</Id>
+					<Name><![CDATA[text10]]></Name>
+					<X>750</X><Y>310</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA["Всего посетителей: " + ]]></Text>
+					<TextCode><![CDATA["Прибыль: " + String.format("%.2f", income - ordersCost)]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1747272343324</Id>
+					<Name><![CDATA[text11]]></Name>
+					<X>750</X><Y>260</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA["Всего посетителей: " + ]]></Text>
+					<TextCode><![CDATA["Потеряно доходов: " + String.format("%.2f", incomeLost)]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1747272343326</Id>
+					<Name><![CDATA[text12]]></Name>
+					<X>750</X><Y>200</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA["Всего посетителей: " + ]]></Text>
+					<TextCode><![CDATA["Доход: " + String.format("%.2f", income)]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>10</Size>
@@ -13556,7 +14215,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1747219144807</Id>
 					<Name><![CDATA[cooker]]></Name>
-					<X>40</X><Y>60</Y>
+					<X>40</X><Y>25</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13571,7 +14230,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1747225041130</Id>
 					<Name><![CDATA[customer]]></Name>
-					<X>40</X><Y>90</Y>
+					<X>40</X><Y>55</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13586,7 +14245,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1747227341347</Id>
 					<Name><![CDATA[isReady]]></Name>
-					<X>40</X><Y>30</Y>
+					<X>125</X><Y>25</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13601,7 +14260,7 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1747229025549</Id>
 					<Name><![CDATA[waiter]]></Name>
-					<X>40</X><Y>120</Y>
+					<X>40</X><Y>85</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13613,7 +14272,120 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1747267678413</Id>
+					<Name><![CDATA[price]]></Name>
+					<X>125</X><Y>60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1747267735130</Id>
+					<Name><![CDATA[maxPrice]]></Name>
+					<X>225</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[2000]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1747267735128</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1747267751211</Id>
+					<Name><![CDATA[minPrice]]></Name>
+					<X>225</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1747267751209</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1747268041040</Id>
+					<Name><![CDATA[averagePrice]]></Name>
+					<X>225</X><Y>65</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[450]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1747268041038</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1747268078601</Id>
+					<Name><![CDATA[setPrice]]></Name>
+					<X>230</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[price = getRandomPrice();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1747271945270</Id>
+					<Name><![CDATA[getRandomPrice]]></Name>
+					<X>230</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return triangular(minPrice, averagePrice, maxPrice);]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1747217927005</Id>
@@ -13782,6 +14554,9 @@ traceln("[FAIL] Customer " + agent + " goes away without order");]]></Code>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[maxWaitingForOrder]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[orderSelfCostRate]]></ParameterName>
 				</Parameter>
 			</Parameters>
 			<PresentationProperties>
